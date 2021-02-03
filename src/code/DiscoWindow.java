@@ -1,6 +1,8 @@
 package code;
 
 import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
+
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -18,6 +20,7 @@ public class DiscoWindow extends javax.swing.JFrame {
     public DiscoWindow() {
         initComponents();
         startComponents();
+        
     }
 
     /**
@@ -29,14 +32,170 @@ public class DiscoWindow extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jFrameAddSong = new javax.swing.JFrame();
+        jLabel1 = new javax.swing.JLabel();
+        jTextFieldSongName = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jComboBoxSongAlbum = new javax.swing.JComboBox<>();
+        jLabel3 = new javax.swing.JLabel();
+        jTextFieldSongMinutes = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jTextFieldSongSeconds = new javax.swing.JTextField();
+        jButtonAddSong2 = new javax.swing.JButton();
+        jFrameAddAlbum = new javax.swing.JFrame();
+        jLabel5 = new javax.swing.JLabel();
+        jTextFieldAlbumName = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jTextFieldAlbumArtist = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jButtonAddAlbum2 = new javax.swing.JButton();
+        dateChooserCombo = new datechooser.beans.DateChooserCombo();
         jButtonConnect = new javax.swing.JButton();
         jButtonDisconnect = new javax.swing.JButton();
         jButtonSimpQueryAlbum = new javax.swing.JButton();
+        jButtonSimpQuerySong = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
+        jTable = new javax.swing.JTable();
+        jButtonAddAlbum = new javax.swing.JButton();
+        jButtonAddSong = new javax.swing.JButton();
+
+        jFrameAddSong.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jFrameAddSong.setMaximumSize(new java.awt.Dimension(250, 275));
+        jFrameAddSong.setPreferredSize(new java.awt.Dimension(250, 275));
+        jFrameAddSong.setResizable(false);
+        jFrameAddSong.setSize(new java.awt.Dimension(250, 275));
+
+        jLabel1.setText("Nombre de la canción");
+
+        jLabel2.setText("Álbum de la canción");
+
+        jLabel3.setText("Duración de la canción");
+
+        jLabel4.setText(":");
+
+        jButtonAddSong2.setText("Añadir canción");
+        jButtonAddSong2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAddSong2ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jFrameAddSongLayout = new javax.swing.GroupLayout(jFrameAddSong.getContentPane());
+        jFrameAddSong.getContentPane().setLayout(jFrameAddSongLayout);
+        jFrameAddSongLayout.setHorizontalGroup(
+            jFrameAddSongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jFrameAddSongLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jFrameAddSongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextFieldSongName)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jComboBoxSongAlbum, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jFrameAddSongLayout.createSequentialGroup()
+                        .addGroup(jFrameAddSongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addGroup(jFrameAddSongLayout.createSequentialGroup()
+                                .addComponent(jTextFieldSongMinutes, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextFieldSongSeconds, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 117, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jFrameAddSongLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButtonAddSong2)))
+                .addContainerGap())
+        );
+        jFrameAddSongLayout.setVerticalGroup(
+            jFrameAddSongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jFrameAddSongLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jTextFieldSongName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel2)
+                .addGap(5, 5, 5)
+                .addComponent(jComboBoxSongAlbum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jFrameAddSongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextFieldSongMinutes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4)
+                    .addComponent(jTextFieldSongSeconds, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(13, 13, 13)
+                .addComponent(jButtonAddSong2)
+                .addContainerGap(72, Short.MAX_VALUE))
+        );
+
+        jFrameAddAlbum.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jFrameAddAlbum.setMaximumSize(new java.awt.Dimension(250, 275));
+        jFrameAddAlbum.setPreferredSize(new java.awt.Dimension(250, 275));
+        jFrameAddAlbum.setResizable(false);
+        jFrameAddAlbum.setSize(new java.awt.Dimension(250, 275));
+
+        jLabel5.setText("Nombre del álbum");
+
+        jLabel6.setText("Artista");
+
+        jLabel7.setText("Fecha de publicación");
+
+        jButtonAddAlbum2.setText("Añadir álbum");
+        jButtonAddAlbum2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAddAlbum2ActionPerformed(evt);
+            }
+        });
+
+        dateChooserCombo.setCalendarPreferredSize(new java.awt.Dimension(400, 250));
+        dateChooserCombo.setWeekStyle(datechooser.view.WeekDaysStyle.FULL);
+
+        javax.swing.GroupLayout jFrameAddAlbumLayout = new javax.swing.GroupLayout(jFrameAddAlbum.getContentPane());
+        jFrameAddAlbum.getContentPane().setLayout(jFrameAddAlbumLayout);
+        jFrameAddAlbumLayout.setHorizontalGroup(
+            jFrameAddAlbumLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jFrameAddAlbumLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jFrameAddAlbumLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextFieldAlbumName)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 405, Short.MAX_VALUE)
+                    .addComponent(jTextFieldAlbumArtist)
+                    .addGroup(jFrameAddAlbumLayout.createSequentialGroup()
+                        .addGroup(jFrameAddAlbumLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6)
+                            .addComponent(jButtonAddAlbum2)
+                            .addComponent(dateChooserCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jFrameAddAlbumLayout.setVerticalGroup(
+            jFrameAddAlbumLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jFrameAddAlbumLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jTextFieldAlbumName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextFieldAlbumArtist, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(jLabel7)
+                .addGap(11, 11, 11)
+                .addComponent(dateChooserCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonAddAlbum2)
+                .addContainerGap(233, Short.MAX_VALUE))
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(500, 500));
+        setMinimumSize(new java.awt.Dimension(500, 500));
+        setPreferredSize(new java.awt.Dimension(500, 500));
+        setResizable(false);
+        setSize(new java.awt.Dimension(500, 500));
 
         jButtonConnect.setText("Iniciar Conexión");
         jButtonConnect.addActionListener(new java.awt.event.ActionListener() {
@@ -46,7 +205,6 @@ public class DiscoWindow extends javax.swing.JFrame {
         });
 
         jButtonDisconnect.setText("Terminar Conexión");
-        jButtonDisconnect.setEnabled(false);
         jButtonDisconnect.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonDisconnectActionPerformed(evt);
@@ -60,7 +218,14 @@ public class DiscoWindow extends javax.swing.JFrame {
             }
         });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jButtonSimpQuerySong.setText("Mostrar Canciones");
+        jButtonSimpQuerySong.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSimpQuerySongActionPerformed(evt);
+            }
+        });
+
+        jTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null}
@@ -69,13 +234,20 @@ public class DiscoWindow extends javax.swing.JFrame {
                 "Nombre del álbum", "Artista", "Fecha de Publicación"
             }
         ));
-        jTable1.setEnabled(false);
-        jScrollPane1.setViewportView(jTable1);
+        jTable.setEnabled(false);
+        jScrollPane1.setViewportView(jTable);
 
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButtonAddAlbum.setText("Añadir álbum");
+        jButtonAddAlbum.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButtonAddAlbumActionPerformed(evt);
+            }
+        });
+
+        jButtonAddSong.setText("Añadir canción");
+        jButtonAddSong.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAddSongActionPerformed(evt);
             }
         });
 
@@ -86,17 +258,17 @@ public class DiscoWindow extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 490, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButtonConnect)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jButtonConnect, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButtonSimpQueryAlbum, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButtonSimpQuerySong, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButtonDisconnect))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButtonSimpQueryAlbum)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 111, Short.MAX_VALUE)
-                        .addComponent(jButton1)
-                        .addGap(85, 85, 85))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addContainerGap())
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButtonDisconnect, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButtonAddAlbum, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButtonAddSong, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -105,14 +277,15 @@ public class DiscoWindow extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonConnect)
                     .addComponent(jButtonDisconnect))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jButtonSimpQueryAlbum))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addComponent(jButton1)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 183, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonSimpQueryAlbum)
+                    .addComponent(jButtonAddAlbum))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonSimpQuerySong)
+                    .addComponent(jButtonAddSong))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -143,39 +316,174 @@ public class DiscoWindow extends javax.swing.JFrame {
 
     private void jButtonSimpQueryAlbumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSimpQueryAlbumActionPerformed
         ArrayList<String> album = connection.staQueryAlbum();
-        if (connection.staQueryAlbum().contains("notConnected")) {
+        if (album.contains("notConnected")) {
             System.err.println("¡No hay ninguna conexión!");
-        } else if (connection.staQueryAlbum().contains("error")) {
+        } else if (album.contains("error")) {
             System.err.println("Error al realizar la consulta");
         } else {
             System.out.println("Consulta realizada con éxito");
-            ArrayList<String> data = connection.staQueryAlbum();
-            for (int i = 0; i < album.size(); i++) {
-                System.out.println(i);
-                }
-            
+
+            resetTable();
+            DefaultTableModel model = (DefaultTableModel) jTable.getModel();
+            model.addRow(new Object[]{"Nombre del álbum", "Artista", "Fecha de Publicación"});
+            model.addRow(new Object[]{"", "", ""});
+            for (int i = 0; i < album.size() - 2; i += 3) {
+                System.out.println(album.get(i));
+                model.addRow(new Object[]{album.get(i), album.get(i + 1), album.get(i + 2)});
+            }
+            jTable.setVisible(rootPaneCheckingEnabled);
         }
     }//GEN-LAST:event_jButtonSimpQueryAlbumActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        connection.createDataBase();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void jButtonSimpQuerySongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSimpQuerySongActionPerformed
+        ArrayList<String> song = connection.staQuerySong();
+        if (song.contains("notConnected")) {
+            System.err.println("¡No hay ninguna conexión!");
+        } else if (song.contains("error")) {
+            System.err.println("Error al realizar la consulta");
+        } else {
+            System.out.println("Consulta realizada con éxito");
+            resetTable();
+            DefaultTableModel model = (DefaultTableModel) jTable.getModel();
+            model.addRow(new Object[]{"Nombre de la canción", "Álbum de la canción", "Duración"});
+            model.addRow(new Object[]{"", "", ""});
+            for (int i = 0; i < song.size() - 2; i += 3) {
+                System.out.println(song.get(i));
+                model.addRow(new Object[]{song.get(i), song.get(i + 1), song.get(i + 2)});
+            }
+            jTable.setVisible(rootPaneCheckingEnabled);
+        }
+    }//GEN-LAST:event_jButtonSimpQuerySongActionPerformed
+
+    private void jButtonAddAlbumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddAlbumActionPerformed
+        disableAll();
+        jFrameAddAlbum.setVisible(true);
+    }//GEN-LAST:event_jButtonAddAlbumActionPerformed
+
+    private void jButtonAddSongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddSongActionPerformed
+        disableAll();
+        ArrayList<String> albumNames = connection.queryAlbumName();
+        if (albumNames.contains("notConnected")) {
+            System.err.println("¡No hay ninguna conexión!");
+        } else if (albumNames.contains("error")) {
+            System.err.println("Error al realizar la consulta");
+        } else {
+            System.out.println("Consulta realizada con éxito");
+            for (int i = 0; i < albumNames.size(); i++) {
+                jComboBoxSongAlbum.addItem(albumNames.get(i));
+            }
+        }
+        jFrameAddSong.setVisible(true);
+    }//GEN-LAST:event_jButtonAddSongActionPerformed
+
+    private void jButtonAddSong2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddSong2ActionPerformed
+        boolean complete = true;
+        String songName = jTextFieldSongName.getText();
+        int album = jComboBoxSongAlbum.getSelectedIndex() + 1;
+        String songLength = "";
+        String songMinutes = jTextFieldSongMinutes.getText();
+        String songSeconds = jTextFieldSongSeconds.getText();
+        int secondsToInt;
+        if (songName.equals("")) {
+            complete = false;
+        } else if (!checkNum(songMinutes, songMinutes.length())) {
+            complete = false;
+        } else if (!checkNum(songSeconds, songSeconds.length())) {
+            complete = false;
+        } else if(complete){
+            if(songSeconds.length() < 2){
+                songSeconds = songSeconds + "0";
+            } else if(songSeconds.length() > 2){
+                songSeconds = songSeconds.substring(0, 2);
+            }
+            try {
+                secondsToInt = Integer.parseInt(songSeconds);
+            } catch (NumberFormatException e) {
+                secondsToInt = -1;
+            }
+            songLength = (songMinutes + ":" + songSeconds);
+            
+            if(connection.addSong(songName, 1, songLength) == 0){
+                System.out.println("Canción añadida con éxito :)");
+            } else if(connection.addSong(songName, album, songLength) == 1){
+                System.out.println("Error al añadir la canción");
+            } else{
+                System.out.println("No estás conectado");
+            }
+        }
+    }//GEN-LAST:event_jButtonAddSong2ActionPerformed
+
+    private void jButtonAddAlbum2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddAlbum2ActionPerformed
+        boolean complete = true;
+        String albumName = jTextFieldAlbumName.getText();
+        String artistName = jTextFieldAlbumArtist.getText();
+        String albumDate = dateChooserCombo.getText();
+       
+        
+        if (albumName.equals("")) {
+            complete = false;
+        } else if (artistName.equals("")){
+            complete = false;
+        } else if (complete){
+            for(int i = 0; i < albumDate.length(); i++){
+                if(albumDate.charAt(i) == '/'){
+                    albumDate = albumDate.substring(0, i) + "-" + albumDate.substring(i+1);
+                System.out.println(albumDate);
+                }
+            }
+            
+        }
+    }//GEN-LAST:event_jButtonAddAlbum2ActionPerformed
 
     private void startComponents() {
         jButtonConnect.setEnabled(true);
         jButtonDisconnect.setEnabled(false);
         jButtonSimpQueryAlbum.setEnabled(false);
-        jScrollPane1.setVisible(false);
+        jButtonSimpQuerySong.setEnabled(false);
+        jButtonAddAlbum.setEnabled(false);
+        jButtonAddSong.setEnabled(false);
+        jTable.getTableHeader().setUI(null);
+        jTable.setVisible(false);
     }
 
-    private void showComponents(){
+    private void showComponents() {
         jButtonConnect.setEnabled(false);
         jButtonDisconnect.setEnabled(true);
         jButtonSimpQueryAlbum.setEnabled(true);
-        jScrollPane1.setVisible(true);
-        jTable1.setVisible(rootPaneCheckingEnabled);
-    
+        jButtonSimpQuerySong.setEnabled(true);
+        jButtonAddAlbum.setEnabled(true);
+        jButtonAddSong.setEnabled(true);
+        resetTable();
     }
+
+    private void disableAll() {
+        jButtonConnect.setEnabled(false);
+        jButtonDisconnect.setEnabled(false);
+        jButtonSimpQueryAlbum.setEnabled(false);
+        jButtonSimpQuerySong.setEnabled(false);
+        jButtonAddAlbum.setEnabled(false);
+        jButtonAddSong.setEnabled(false);
+    }
+
+    private void resetTable() {
+        while (jTable.getRowCount() > 0) {
+            ((DefaultTableModel) jTable.getModel()).removeRow(0);
+        }
+    }
+
+    public boolean checkNum(String num, int n) {
+        for (int i = 0; i < n; i++) {
+
+            if (num.charAt(i) != '0' && num.charAt(i) != '1' && num.charAt(i) != '2'
+                    && num.charAt(i) != '3' && num.charAt(i) != '4' && num.charAt(i) != '5'
+                    && num.charAt(i) != '6' && num.charAt(i) != '7' && num.charAt(i) != '8'
+                    && num.charAt(i) != '9') {
+                return false;
+            }
+        }
+        return true;
+    }
+
     /**
      * @param args the command line arguments
      */
@@ -213,11 +521,31 @@ public class DiscoWindow extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private datechooser.beans.DateChooserCombo dateChooserCombo;
+    private javax.swing.JButton jButtonAddAlbum;
+    private javax.swing.JButton jButtonAddAlbum2;
+    private javax.swing.JButton jButtonAddSong;
+    private javax.swing.JButton jButtonAddSong2;
     private javax.swing.JButton jButtonConnect;
     private javax.swing.JButton jButtonDisconnect;
     private javax.swing.JButton jButtonSimpQueryAlbum;
+    private javax.swing.JButton jButtonSimpQuerySong;
+    private javax.swing.JComboBox<String> jComboBoxSongAlbum;
+    private javax.swing.JFrame jFrameAddAlbum;
+    private javax.swing.JFrame jFrameAddSong;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable;
+    private javax.swing.JTextField jTextFieldAlbumArtist;
+    private javax.swing.JTextField jTextFieldAlbumName;
+    private javax.swing.JTextField jTextFieldSongMinutes;
+    private javax.swing.JTextField jTextFieldSongName;
+    private javax.swing.JTextField jTextFieldSongSeconds;
     // End of variables declaration//GEN-END:variables
 }
